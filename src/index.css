@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* black */
+    --foreground: 0 0% 100%; /* white */
+    --card: 0 0% 0%; /* black */
+    --card-foreground: 0 0% 100%; /* white */
+    --popover: 0 0% 0%; /* black */
+    --popover-foreground: 0 0% 100%; /* white */
+    --primary: 217 91% 60%; /* blue-500 */
+    --primary-foreground: 0 0% 100%; /* white */
+    --secondary: 217 19% 27%; /* slate-700 */
+    --secondary-foreground: 0 0% 100%; /* white */
+    --muted: 217 19% 27%; /* slate-700 */
+    --muted-foreground: 217 10% 65%; /* slate-400 */
+    --accent: 217 19% 27%; /* slate-700 */
+    --accent-foreground: 0 0% 100%; /* white */
+    --destructive: 0 84% 60%; /* red-500 */
+    --destructive-foreground: 0 0% 100%; /* white */
+    --border: 217 19% 27%; /* slate-700 */
+    --input: 217 19% 27%; /* slate-700 */
+    --ring: 217 91% 60%; /* blue-500 */
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotateX(5deg); 
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
